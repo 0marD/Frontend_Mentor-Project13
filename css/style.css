@@ -104,6 +104,10 @@ svg {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.button:hover {
+    opacity: .8;
+}
+
 /*  header */
 .header__image {
     margin-top: 3em;
@@ -240,6 +244,7 @@ svg {
     display: flex;
     flex-direction: column;
     gap: .5em;
+    position: relative;
 }
 
 .suscribe__input {
@@ -251,6 +256,14 @@ svg {
     outline: none;
 }
 
+.suscribe__input:focus:invalid~.msg__error:before {
+    content: "* please check your email";
+    position: absolute;
+    color: var(--light-red);
+    bottom: 40%;
+    left: 0;
+    font-size: .6rem;
+}
 
 .suscribe__input::placeholder {
     font-weight: lighter;
@@ -463,6 +476,13 @@ svg {
 
     .footer--newsletter {
         width: 50%;
+    }
+
+    .suscribe__input:focus:invalid~.msg__error:before {
+        content: "* please check your email";
+
+        bottom: -40%;
+
     }
 }
 
